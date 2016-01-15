@@ -1,7 +1,7 @@
 #include "DS18B20/Particle-OneWire.h"
 #include "DS18B20/DS18B20.h"
 
-DS18B20 ds18b20 = DS18B20(D2); //Sets Pin D2 for Waterproof Temp Sensor
+DS18B20 ds18b20 = DS18B20(D6); //Sets Pin D6 for Waterproof Temp Sensor
 int led = D7;
 char szInfo[64];
 float pubTemp;
@@ -16,8 +16,8 @@ int dsAttempts = 0;
 void setup() {
     Time.zone(-6);
     Particle.syncTime();
-    pinMode(D2, INPUT);
-    Particle.variable("tempHotWater", &fahrenheit, DOUBLE);
+    pinMode(D6, INPUT);
+    Particle.variable("tempHotWater", &fahrenheit);
     Serial.begin(115200);
 }
 
