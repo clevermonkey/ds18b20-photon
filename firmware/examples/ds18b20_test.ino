@@ -17,7 +17,7 @@ void setup() {
     Time.zone(-6);
     Particle.syncTime();
     pinMode(D6, INPUT);
-    Particle.variable("tempHotWater", &fahrenheit);
+    Particle.variable("tempHotWater", &fahrenheit, DOUBLE);
     Serial.begin(115200);
 }
 
